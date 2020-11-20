@@ -40,11 +40,11 @@ es中index名称为”sentences“，每条数据对应一句话，由三个字�
 
 Demo包含首页和搜索结果页两个页面，预览如下。
 
-![image-20201116215236306](/Users/even/Library/Application Support/typora-user-images/image-20201116215236306.png)
+![image-20201116215236306](./image/image-20201116215236306.png)
 
-![image-20201116215347481](/Users/even/Library/Application Support/typora-user-images/image-20201116215347481.png)
+![image-20201116215347481](./image/image-20201116215347481.png)
 
-![image-20201116215420606](/Users/even/Library/Application Support/typora-user-images/image-20201116215420606.png)
+![image-20201116215420606](./image/image-20201116215420606.png)
 
 + 点击YSearch图标可回到首页
 + 每页显示50条数据，支持分页功能
@@ -118,19 +118,21 @@ Demo包含首页和搜索结果页两个页面，预览如下。
 
 ## 五、demo演示
 
-录屏见附件`screenrecord.mov`。部分搜索结果截图如下：
+录屏见附件[screenrecord.mov][https://drive.google.com/file/d/1PbVAdU13siuza3AnmgpQo9TOy04tVlAB/view?usp=sharing]。
 
-![image-20201116221959068](/Users/even/Library/Application Support/typora-user-images/image-20201116221959068.png)
+部分搜索结果截图如下：
 
-![image-20201116222302721](/Users/even/Library/Application Support/typora-user-images/image-20201116222302721.png)
+![image-20201116221959068](./image/image-20201116221959068.png)
 
-![image-20201116222431173](/Users/even/Library/Application Support/typora-user-images/image-20201116222431173.png)
+![image-20201116222302721](./image/image-20201116222302721.png)
 
-![image-20201116222347026](/Users/even/Library/Application Support/typora-user-images/image-20201116222347026.png)
+![image-20201116222431173](./image/image-20201116222431173.png)
 
-![image-20201116222541668](/Users/even/Library/Application Support/typora-user-images/image-20201116222541668.png)
+![image-20201116222347026](./image/image-20201116222347026.png)
 
-![image-20201116222624938](/Users/even/Library/Application Support/typora-user-images/image-20201116222624938.png)
+![image-20201116222541668](./image/image-20201116222541668.png)
 
-![image-20201116222721954](/Users/even/Library/Application Support/typora-user-images/image-20201116222721954.png)
+![image-20201116222624938](./image/image-20201116222624938.png)
+
+![image-20201116222721954](./image/image-20201116222721954.png)
 
