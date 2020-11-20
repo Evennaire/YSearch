@@ -118,7 +118,7 @@ Demo包含首页和搜索结果页两个页面，预览如下。
 
 ## 五、demo演示
 
-录屏见附件[screenrecord.mov][https://drive.google.com/file/d/1PbVAdU13siuza3AnmgpQo9TOy04tVlAB/view?usp=sharing]。
+录屏见附件[screenrecord.mov](https://drive.google.com/file/d/1PbVAdU13siuza3AnmgpQo9TOy04tVlAB/view?usp=sharing)。
 
 部分搜索结果截图如下：
 
