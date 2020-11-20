@@ -1,0 +1,51 @@
+<HTML>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <TITLE>YSearch</TITLE>
+</head>
+<body>
+    <body><style type="text/css">
+        body{ background-image:url("static/bg.jpg");background-attachment:fixed; background-size:100% 100%; }
+    </style></body>
+{% for message in get_flashed_messages() %}
+    <div class="alert" style="text-align: center;float:top;position: absolute;color:red; ">{{ message }}</div>
+{% endfor %}
+<div style="text-align: center;">
+    <a href='index'><img style="margin-top: 10%" class="pos" src="static/icon.png" height="15%"></a>
+</div>
+<br>
+<div style="text-align: center; margin-top: 2px;height: 5%;min-height: 30px;">
+    <form action="result" method="POST">
+        <input style="margin:0;padding:0;width: 60%;height: 100%;font-size: 20px;border-radius: 5px;" type="text" name="query">
+        <input style="margin:0;padding:0;width: 10%;height: 100%;font-size: 20px;background-color: darkseagreen; border-radius: 5px;" type="submit" value="搜索">
+    </form>
+</div>
+<div style="text-align: center;">
+    <p class="title">输入格式</p>
+    <p class="content">词1(性1) (性2) 词3(性3) ... [+a]
+    <p class="content">+a为可选项，表示相邻，仅有+a时允许出现单独词性</p>
+    <p class="content">如：①我(r) 笑 ②我(r) (v) 了 +a</p>
+    <p class="title">词性提示</p>
+    <p class="content">n/名词 np/人名 ns/地名 ni/机构名 nz/其它专名</p>
+    <p class="content">m/数词 q/量词 mq/数量词 t/时间词 f/方位词 s/处所词</p>
+    <p class="content">v/动词 a/形容词 d/副词 h/前接成分 k/后接成分 i/习语</p>
+    <p class="content">j/简称 r/代词 c/连词 p/介词 u/助词 y/语气助词</p>
+    <p class="content">e/叹词 o/拟声词 g/语素 w/标点 x/其它</p>
+</div>
+<div style="text-align: center;margin-top: 8%;">
+    <p style="font-size: 15px">@Supported by THULAC, ELASTICSEARCH & EVEN YIN</p>
+</div>
+
+
+</body>
+<style>
+    .content {
+        margin: 0
+    }
+    .title {
+        font-weight: bolder; 
+        font-size: larger;
+        margin: 15px;
+    }
+</style>
+</HTML>

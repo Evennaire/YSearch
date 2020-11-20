@@ -1,0 +1,123 @@
+<!--{"time": time, "num" : num }-->
+<HTML>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <TITLE>YSearch Result</TITLE>
+</head>
+<body>
+    <body><style type="text/css">
+        body{ background-image:"static/bg.jpg";background-attachment:fixed; background-size: 100% 100%;}
+    </style></body>
+    <div style="text-align: left; margin-left: 1%">
+        <a href="/index"><img class="pos" src="static/icon.png" height="10%"></a>
+    </div>
+    <div style="text-align: left; margin-left: 1%; margin-top: 2px;height: 4%; min-height: 30px; ">
+        <form action="result" method="POST">
+            <input style="margin:0;padding:0;width: 50%;height: 100%;font-size: 20px;border-radius: 5px;" type="text" value="{{ query }}" name="query">
+            <input style="margin:0;padding:0;width: 8%;height: 100%;font-size: 20px;background-color: darkseagreen; border-radius: 5px;" type="submit" value="搜索">
+        </form>
+    </div>
+<div>
+    <p style="margin-left: 2%">搜索耗时 {{ res.time }} ms，搜索到 {{ res.total }} 条结果</p>
+</div>
+
+<!--script language="JavaScript">
+    var content = document.getElementById("content");
+    content.innerHTML = '<font color = "red">' + content.innerHTML + '</font>';
+</script-->
+
+<div style="margin: 4%;margin-top: 0;">
+    <table width="100%">
+        <tr width="100%">
+            <th width="80%" align="left">
+                <b></b>
+            </th>
+            <th width="20%" align="right">
+                <p style="margin:0"><font color="darkseagreen">相关性</font></p>
+            </th>
+        </tr> 
+    </table> 
+    {% for item in res.res %}
+        <div>
+            <table width="100%">
+                <tr width="100%">
+                    <th width="80%" align="left">
+                        <b>{{ item.content }}</b>
+                    </th>
+                    <th width="20%" align="right">
+                        <p style="margin:0"><font color="#3b3b3b">{{ item.score }}</font></p>
+                        <!--p style="margin:0"><font color="darkseagreen">分词结果：</font><font color="#3b3b3b">{{ item.mix }}</font></p-->
+                    </th>
+                </tr> 
+            </table> 
+        </div>
+        <hr>
+    {% endfor %}
+</div>
+
+<div class="pagination" style="margin-left: 2%;">
+    <table cellspacing="10">
+    <tr>
+        <th>
+            <form action = "result" method = "post">
+                <input type="hidden" value="{{ query }}" name = "query">
+                <input type="hidden" value="1" name = "page">
+                <button >首页</button>
+            </form>
+        </th>
+        {% if res.page > 1 %}
+        <th>
+            <form action = "result" method = "post">
+                <input type="hidden" value="{{ query }}" name = "query">
+                <input type="hidden" value="{{ res.page-1 }}" name = "page">
+                <button >上一页</button>
+            </form>
+        </th>
+        {% endif %}
+        {% for i in range(1, res.total_page+1) %}
+        <th>
+            <form action = "result" method = "post">
+                <input type="hidden" value="{{ query }}" name = "query">
+                <input type="hidden" value="{{ i }}" name = "page">
+                {% if res.page == i %}
+                    <button  style="background-color:darkseagreen;border-radius: 3px;">{{ i }}</button>
+                {% else %}
+                    <button >{{ i }}</button>
+                {% endif %}
+            </form>
+        </th>
+        {% endfor %}
+        {% if res.page < res.total_page %}
+        <th>
+            <form action = "result" method = "post">
+                <input type="hidden" value="{{ query }}" name = "query">
+                <input type="hidden" value="{{ res.page+1 }}" name = "page">
+                <button >下一页</button>
+            </form>
+        </th>
+        {% endif %}
+        {% if res.total_page > 0 %}
+        <th>
+            <form action = "result" method = "post">
+                <input type="hidden" value="{{ query }}" name = "query">
+                <input type="hidden" value="{{ res.total_page }}" name = "page">
+                <button >末页</button>
+            </form>
+        </th>
+        {% endif %}
+    </tr>
+    </table>
+</div>
+
+<p style="text-align: center;margin-top: 4%;">@Supported by THULAC, ELASTICSEARCH & EVEN YIN</p>
+
+</body>
+<style>
+    button {
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 30px;
+    }
+</style>
+</HTML>
+
