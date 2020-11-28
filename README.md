@@ -107,7 +107,7 @@ Demo包含首页和搜索结果页两个页面，预览如下。
 
 
 
-## 四、问题与解决
+## 4 问题与解决
 
 1. Elastic search的写入问题。一开始为了测试，我在同一个程序里先写入再查询一批少量数据，结果发现查询结果为空。实际上数据库的写入也需要一点时间，两个进程是并行的，不能这么测试。写入后直接用postman查询即可。
 2. 批量写入。我发现数据的写入非常慢，很少量的数据就需要耗费一秒的时间，所以必须用python elasticsearch库的helpers.bulk()，打包数据后批量写入。
@@ -116,7 +116,7 @@ Demo包含首页和搜索结果页两个页面，预览如下。
 
 
 
-## 五、demo演示
+## 5 demo演示
 
 录屏见附件[screenrecord.mov](https://drive.google.com/file/d/1PbVAdU13siuza3AnmgpQo9TOy04tVlAB/view?usp=sharing)。
 
