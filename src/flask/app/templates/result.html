@@ -13,7 +13,11 @@
     </div>
     <div style="text-align: left; margin-left: 1%; margin-top: 2px;height: 4%; min-height: 30px; ">
         <form action="result" method="POST">
-            <input style="margin:0;padding:0;width: 50%;height: 100%;font-size: 20px;border-radius: 5px;" type="text" value="{{ query }}" name="query">
+            <input style="margin:0;padding:0;width: 44%;height: 100%;font-size: 20px;border-radius: 5px;" type="text" value="{{ query }}" name="query">
+            <select style="margin:0;padding:0;width: 6%;height: 100%;font-size: 15px;border-radius: 5px;" name="adjacent" id="sel">
+                <option value="n">不限</option>
+                <option value="y">必须相邻</option>
+            </select>
             <input style="margin:0;padding:0;width: 8%;height: 100%;font-size: 20px;background-color: darkseagreen; border-radius: 5px;" type="submit" value="搜索">
         </form>
     </div>
@@ -25,6 +29,18 @@
     var content = document.getElementById("content");
     content.innerHTML = '<font color = "red">' + content.innerHTML + '</font>';
 </script-->
+
+<script >
+    var ss = document.getElementById('sel');
+    if ('{{ res.adj }}' == 'True') {
+        ss[0].selected = false;
+        ss[1].selected = true;
+    }
+    else {
+        ss[0].selected = true;
+        ss[1].selected = false;
+    }
+</script>
 
 <div style="margin: 4%;margin-top: 0;">
     <table width="100%">
@@ -43,10 +59,10 @@
                 <tr width="100%">
                     <th width="80%" align="left">
                         <b>{{ item.content }}</b>
+                        <!--p style="margin:0"><font color="darkseagreen">分词结果：</font><font color="#3b3b3b">{{ item.mix }}</font></p-->
                     </th>
                     <th width="20%" align="right">
-                        <p style="margin:0"><font color="#3b3b3b">{{ item.score }}</font></p>
-                        <!--p style="margin:0"><font color="darkseagreen">分词结果：</font><font color="#3b3b3b">{{ item.mix }}</font></p-->
+                        <p style="margin:0"><font color="#3b3b3b">{{ item.score }}</font></p>             
                     </th>
                 </tr> 
             </table> 

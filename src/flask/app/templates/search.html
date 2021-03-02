@@ -16,8 +16,12 @@
 <br>
 <div style="text-align: center; margin-top: 2px;height: 5%;min-height: 30px;">
     <form action="result" method="POST">
-        <input style="margin:0;padding:0;width: 60%;height: 100%;font-size: 20px;border-radius: 5px;" type="text" name="query">
-        <input style="margin:0;padding:0;width: 10%;height: 100%;font-size: 20px;background-color: darkseagreen; border-radius: 5px;" type="submit" value="搜索">
+        <input style="margin:0;padding:0;width: 55%;height: 100%;font-size: 20px;border-radius: 5px;" type="text" name="query">
+        <select style="margin:0;padding:0;width: 6%;height: 100%;font-size: 15px;border-radius: 5px;" name="adjacent">
+            <option value="n">不限</option>
+            <option value="y">必须相邻</option>
+        </select>
+        <input style="margin:0;padding:0;width: 8%;height: 100%;font-size: 20px;background-color: darkseagreen; border-radius: 5px;" type="submit" value="搜索">
     </form>
 </div>
 <div style="text-align: center;">
